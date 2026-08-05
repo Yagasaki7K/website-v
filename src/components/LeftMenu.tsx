@@ -59,8 +59,13 @@ const LeftMenuDetails = styled.div`
             margin: 0;
 
             li {
-                margin-top: -1rem;
                 padding: 1rem 0;
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-size: 0.6rem;
+                }
     
                 a {
                     color: hsl(0 100% 25%);

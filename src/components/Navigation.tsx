@@ -6,9 +6,10 @@ const NavigationDetails = styled.div`
     position: fixed;
     width: 95vw;
     justify-content: space-between;
+    text-align: center;
     align-items: center;
     padding: 0rem 4rem;
-    height: 35px;
+    height: 38px;
     border: 1px solid hsl(0 100% 8%);
     font-family: 'Source Serif 4', serif;
     background: linear-gradient(0deg, hsl(0 100% 8%) 0%, hsl(0 100% 2%) 100%);
@@ -22,7 +23,10 @@ const NavigationDetails = styled.div`
             list-style: none;
 
             li {
-                padding: 0.5rem 1.2rem;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                padding: 0.75rem 1.2rem;
 
                 a {
                     text-decoration: none;
@@ -53,13 +57,14 @@ const NavigationDetails = styled.div`
         }
 
         img {
-            width: 40px;
+            width: 50px;
+            margin-top: 0.5rem;
         }
     }
 
     .rightContent {
         img {
-            width: 25px;
+            width: 28px;
             content: url('/samurai-white.png');
 
             &:hover {

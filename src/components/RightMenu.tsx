@@ -18,8 +18,11 @@ const RightMenuDetails = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    position: fixed;
+    position: sticky;
     right: 18rem;
+    top: 40px;
+    align-self: flex-start;
+    z-index: 1000;
 
     .square {
         margin-top: 1rem;
@@ -95,7 +98,6 @@ const RightMenuDetails = styled.div`
             }
         }
     }
-
 `;
 
 const RightMenu = () => {

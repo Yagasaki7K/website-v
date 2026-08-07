@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { useRouter } from "next/router";
 
 const NavigationDetails = styled.div`
     display: flex;
@@ -72,19 +73,204 @@ const NavigationDetails = styled.div`
             }
         }
     }
+
+    @media (max-width: 1600px) {
+        width: calc(100vw - 2rem);
+        padding: 0 3rem;
+
+        .leftContent {
+            ul {
+                li {
+                    padding: 0.75rem 1rem;
+
+                    a {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1366px) {
+        padding: 0 2rem;
+
+        .leftContent {
+            gap: 1rem;
+
+            img {
+                width: 42px;
+            }
+
+            ul {
+                li {
+                    padding: 0.75rem 0.8rem;
+
+                    a {
+                        font-size: 0.72rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        padding: 0 1.5rem;
+
+        .leftContent {
+            img {
+                width: 40px;
+            }
+
+            ul {
+                li {
+                    padding: 0.75rem 0.65rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        width: 100%;
+        padding: 0 1rem;
+
+        .leftContent {
+            flex: 1;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            ul {
+                flex-wrap: nowrap;
+                width: max-content;
+
+                li {
+                    flex-shrink: 0;
+                    padding: 0.75rem 0.7rem;
+                }
+            }
+
+            img {
+                width: 38px;
+                flex-shrink: 0;
+            }
+        }
+
+        .rightContent {
+            margin-left: 1rem;
+            flex-shrink: 0;
+
+            img {
+                width: 24px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        height: 36px;
+        padding: 0 0.75rem;
+
+        .leftContent {
+            img {
+                width: 34px;
+            }
+
+            ul {
+                li {
+                    padding: 0.65rem 0.6rem;
+
+                    a {
+                        font-size: 0.68rem;
+                    }
+                }
+            }
+        }
+
+        .rightContent {
+            img {
+                width: 22px;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 0 0.5rem;
+
+        .leftContent {
+            img {
+                width: 30px;
+            }
+
+            ul {
+                li {
+                    padding: 0.65rem 0.5rem;
+
+                    a {
+                        font-size: 0.65rem;
+                    }
+                }
+            }
+        }
+
+        .rightContent {
+            img {
+                width: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 428px) {
+        padding: 0 0.4rem;
+
+        .leftContent {
+            img {
+                width: 28px;
+            }
+
+            ul {
+                li {
+                    padding: 0.6rem 0.45rem;
+
+                    a {
+                        font-size: 0.62rem;
+                    }
+                }
+            }
+        }
+
+        .rightContent {
+            img {
+                width: 18px;
+            }
+        }
+    }
 `
 
 const Navigation = () => {
+    const router = useRouter();
+
     return (
         <NavigationDetails>
             <div className="leftContent">
                 <Link href="/"><img src="/msn.png" alt="" /></Link>
 
                 <ul>
-                    <li className="selected"><Link href="/">Início</Link></li>
-                    <li className="non-selected"><Link href="/">Posts</Link></li>
-                    <li className="non-selected"><Link href="/">Fotos</Link></li>
-                    <li className="non-selected"><Link href="/">Review</Link></li>
+                    <li className={router.pathname === "/" ? "selected" : "non-selected"}>
+                        <Link href="/">Início</Link>
+                    </li>
+
+                    <li className={router.pathname === "/posts" ? "selected" : "non-selected"}>
+                        <Link href="/posts">Posts</Link>
+                    </li>
+
+                    {/* <li className="non-selected"><Link href="/">Fotos</Link></li> */}
+
+                    <li className={router.pathname === "/review" ? "selected" : "non-selected"}>
+                        <Link href="/review">Review</Link>
+                    </li>
                 </ul>
             </div>
 

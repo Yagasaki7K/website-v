@@ -4,8 +4,7 @@ import styled from 'styled-components'
 
 const HomeFeedDetails = styled.div`
     width: calc(100% - 35rem);
-    margin-left: 16rem;
-    margin-top: 1.5rem;
+    margin: 1.5rem 1rem 0 1rem;
     padding: 0.5rem 1rem;
     border-radius: 0 30px 0 0;
     border: 1px solid hsl(0 100% 8%);
@@ -161,10 +160,6 @@ const HomeFeedDetails = styled.div`
         flex-direction: column;
         border: 1px solid hsl(0 100% 15%);
 
-        &:hover {
-            border: 1px solid hsl(0 100% 25%);
-        }
-
         .info {
             display: flex;
             border: 1px solid hsl(0 100% 15%);
@@ -199,10 +194,6 @@ const HomeFeedDetails = styled.div`
         display: flex;
         flex-direction: column;
         border: 1px solid hsl(0 100% 15%);
-
-        &:hover {
-            border: 1px solid hsl(0 100% 25%);
-        }
 
         .job {
             display: flex;
@@ -354,6 +345,312 @@ const HomeFeedDetails = styled.div`
                 &:hover {
                     color: hsl(0 100% 75%);
                     background: hsl(0 100% 10%);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1600px) {
+    .homeFeedDetails,
+        & {
+            width: calc(100% - 30rem);
+            margin-left: 14rem;
+        }
+
+        .posts {
+            .leftPost {
+                width: 13rem;
+            }
+
+            .rightPost {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 1366px) {
+        .homeFeedDetails,
+        & {
+            width: calc(100% - 26rem);
+            margin-left: 12rem;
+        }
+
+        .cards-info {
+            flex-wrap: wrap;
+
+            .card {
+                min-width: calc(50% - .5rem);
+            }
+        }
+
+        .posts {
+            .leftPost {
+                width: 11rem;
+            }
+        }
+
+        .personal {
+            .info {
+                .title-info {
+                    width: 8rem;
+                }
+            }
+        }
+
+        .jobs {
+            .job {
+                .title-job {
+                    width: 12rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .homeFeedDetails,
+        & {
+            width: calc(100% - 4rem);
+            margin: 1.5rem auto 0;
+        }
+
+        .cards-info {
+            .card {
+                min-width: 100%;
+            }
+        }
+
+        .posts {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .leftPost,
+            .rightPost {
+                width: 100%;
+            }
+        }
+
+        .personal {
+            .info {
+                flex-direction: column;
+                gap: .5rem;
+                padding: 1rem;
+
+                .title-info,
+                .text-info {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+
+        .jobs {
+            .job {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+
+                .title-job,
+                .text-job {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        .homeFeedDetails,
+        & {
+            width: calc(100% - 3rem);
+            margin: 1rem auto 0;
+            padding: 1rem;
+        }
+
+        .head {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: .75rem;
+        }
+
+        .cards-menu {
+            overflow-x: auto;
+            white-space: nowrap;
+
+            .card {
+                flex-shrink: 0;
+            }
+        }
+
+        .testimonials {
+            .message {
+                flex-direction: column;
+
+                .headMessage {
+                    padding: .5rem 0;
+
+                    .header {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: .25rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .homeFeedDetails,
+        & {
+            width: calc(100% - 2rem);
+            padding: .75rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            font-size: .8rem;
+        }
+
+        .posts {
+            .rightPost {
+                h4 {
+                    font-size: .85rem;
+                }
+
+                p {
+                    font-size: .7rem;
+                }
+            }
+        }
+
+        .testimonials {
+            .ourTestimonials {
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .homeFeedDetails,
+        & {
+            width: calc(100% - 1rem);
+            padding: .75rem .5rem;
+        }
+
+        .cards-menu {
+            .card {
+                font-size: .7rem;
+            }
+        }
+
+        .posts {
+            padding: .75rem;
+
+            .leftPost {
+                b {
+                    font-size: .75rem;
+                }
+
+                p {
+                    font-size: .65rem;
+                }
+            }
+
+            .rightPost {
+                h4 {
+                    font-size: .8rem;
+                }
+
+                p {
+                    font-size: .68rem;
+                }
+            }
+        }
+
+        .jobs {
+            .job {
+                .title-job {
+                    h4 {
+                        font-size: .8rem;
+                    }
+
+                    .role-job {
+                        font-size: .65rem;
+                    }
+                }
+
+                .text-job {
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 428px) {
+        .homeFeedDetails,
+        & {
+            width: 100%;
+            margin-top: .5rem;
+            padding: .5rem;
+            border-radius: 0;
+        }
+
+        .head {
+            a {
+                font-size: .7rem;
+            }
+        }
+
+        .cards-info {
+            font-size: .7rem;
+        }
+
+        .personal {
+            .info {
+                .title-info,
+                .text-info {
+                    font-size: .7rem;
+                }
+            }
+        }
+
+        .testimonials {
+            .message {
+                .image {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                .headMessage {
+                    .header {
+                        b {
+                            font-size: .75rem;
+                        }
+
+                        p {
+                            font-size: .65rem;
+                        }
+                    }
+
+                    .me {
+                        font-size: .7rem;
+                    }
+                }
+            }
+
+            .ourTestimonials {
+                input,
+                textarea {
+                    font-size: .75rem;
+                }
+
+                button {
+                    font-size: .75rem;
                 }
             }
         }
